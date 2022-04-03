@@ -10,14 +10,14 @@
 <h3><a href="index.html">Home</a></h3>
 <hr>
 <h2>Meals</h2>
-<h4><a href="index.html">Add meal</a></h4>
+<h4><a href="meals?action=create&mealId=<c:out value="${meal.id}"/>">Add meal</a></h4>
 <table border="1">
     <tr>
-        <th>Date</th>
-        <th>Description</th>
-        <th>Calories</th>
-        <th></th>
-        <th></th>
+        <th width="160">Date</th>
+        <th width="300">Description</th>
+        <th width="100">Calories</th>
+        <th width="60"></th>
+        <th width="60"></th>
     </tr>
 
     <c:forEach var="meal" items="${meals}">
@@ -26,8 +26,8 @@
             <td>${f:formatLocalDateTime(meal.dateTime, 'dd-MM-yyyy HH:mm')}</td>
             <td>${meal.description}</td>
             <td>${meal.calories}</td>
-            <td>Update</td>
-            <td>Delete</td>
+            <td><a href="meals?action=update&mealId=<c:out value="${meal.id}"/>">Update</a></td>
+            <td><a href="meals?action=delete&mealId=<c:out value="${meal.id}"/>">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
