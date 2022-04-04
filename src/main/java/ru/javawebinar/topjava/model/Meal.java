@@ -3,10 +3,11 @@ package ru.javawebinar.topjava.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.concurrent.atomic.AtomicInteger;
+
+import static ru.javawebinar.topjava.util.MealsUtil.counter;
 
 public class Meal {
-    public static AtomicInteger counter = new AtomicInteger(0);
+
     private final int id;
 
     private final LocalDateTime dateTime;
