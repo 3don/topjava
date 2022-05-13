@@ -43,7 +43,6 @@ public class JdbcUserRepository implements UserRepository {
     @Transactional
     public User save(User user) {
         ValidationUtil.validate(user);
-
         BeanPropertySqlParameterSource parameterSource = new BeanPropertySqlParameterSource(user);
 
         if (user.isNew()) {
